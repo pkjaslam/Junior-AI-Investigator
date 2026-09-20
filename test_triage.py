@@ -380,11 +380,18 @@ def test_care_context_frame_is_rejected():
     assert checks.check_care_context_frame("Weekend billing share is 0.51, above the 0.13 expected for daily care.")
     assert checks.check_care_context_frame("Weekend share exceeds the benign pattern of 0.29.")
     assert checks.check_care_context_frame("A share of 0.29 is expected for daily care.")
+    assert checks.check_care_context_frame("A share of 0.29 is expected for daily home health aide care.")
     assert checks.check_care_context_frame("Home health aide services often use flat daily rates.")
     assert checks.check_care_context_frame("Round-dollar charges often come from flat monthly rates.")
     assert not checks.check_care_context_frame("The queue's benign-profile upper bound is 0.13.")
     assert not checks.check_care_context_frame("The share exceeds the seven-day-care benchmark of 0.29.")
     assert not checks.check_care_context_frame("A flat charge could be an ordinary explanation.")
+
+
+def test_malformed_number_is_rejected():
+    facts = {"weekend_billing_ratio": "0.51", "benign": "0.00 to 0.13"}
+    assert "malformed number" in checks.check_wording("Weekend share is 0.51.00.", "")[0]
+    assert checks.check_numbers("Weekend share is 0.51.", facts) == []
 
 
 def test_questions(queue):

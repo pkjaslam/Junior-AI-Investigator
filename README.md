@@ -2,6 +2,8 @@
 
 A Streamlit workbench for reviewing 50 synthetic long-term-care claim referrals.
 
+**Live app:** https://junior-ai-investigator.streamlit.app/
+
 The app separates the queue into three triage lanes, shows the evidence for each case, recommends the first check, answers case questions, and records the investigator's decision. The data has no fraud outcomes, so the app does not estimate fraud probability or claim model accuracy.
 
 ## Run locally

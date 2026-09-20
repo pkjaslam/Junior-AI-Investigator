@@ -48,6 +48,7 @@ UNSUPPORTED_DURATION = re.compile(
     r"(?:days?|weeks?|months?|years?)\b", re.I)
 PROMPT_ECHO = re.compile(r"CASE_FACTS|TOOL_RESULTS|\bJSON\b|fact sheet|concrete fact|the prompt|lane\.why")
 BROKEN_TEXT = re.compile(r"\ufffd|[\x00-\x08\x0b\x0c\x0e-\x1f]")
+MALFORMED_NUMBER = re.compile(r"(?<!\d)\d+\.\d+\.\d+(?!\d)")
 RESIDENCY_FRAME = [        # billed units are not residency days: a resident can be billed several services per day
     re.compile(r"\bexceed\w*\b[^.]{0,35}\b\d+[- ]?days?\b", re.I),                 # "exceeds 7-day / 7 days"
     re.compile(r"\bmore\b[^.]{0,35}\bthan\b[^.]{0,25}\bdays?\b(?![^.]{0,15}\brecord)", re.I),  # "more units billed than days available"
@@ -63,7 +64,7 @@ CARE_CONTEXT_FRAME = [
     # 2/7 = 0.29 is a calendar benchmark for care on all seven days, not an empirical benign profile.
     re.compile(r"\b(?:0\.29|2/7)\b[^.]{0,45}\bbenign (?:pattern|profile|range|expectation)\b", re.I),
     re.compile(r"\bbenign (?:pattern|profile|range|expectation)\b[^.]{0,45}\b(?:0\.29|2/7)\b", re.I),
-    re.compile(r"\b(?:0\.29|2/7)\b[^.]{0,45}\bexpected\b[^.]{0,30}\bdaily care\b", re.I),
+    re.compile(r"\b(?:0\.29|2/7)\b[^.]{0,45}\bexpected\b[^.]{0,30}\bdaily\b[^.]{0,30}\bcare\b", re.I),
     # The data do not establish how commonly home-health-aide providers use flat rates.
     re.compile(r"\bhome health aide\b[^.]{0,60}\b(?:often|usually|typically)\b[^.]{0,35}\bflat\b", re.I),
     re.compile(r"\bround-dollar (?:charges|billing)\b[^.]{0,35}\b(?:often|usually|typically)\b[^.]{0,35}\bflat\b", re.I),
@@ -133,6 +134,9 @@ def check_wording(text: str, facts_text: str) -> list[str]:
     hit = UNSUPPORTED_DURATION.search(text)
     if hit:
         issues.append(f"a duration the data cannot support: '{hit.group(0)}'")
+    hit = MALFORMED_NUMBER.search(text)
+    if hit:
+        issues.append(f"malformed number: '{hit.group(0)}'")
     return issues
 
 

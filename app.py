@@ -1106,16 +1106,15 @@ def view_methods(model, table, briefing):
 
 def ai_status(packages: dict, briefs: dict, client) -> None:
     """Header button: how many briefs the language model wrote, and what happened to the rest."""
-    need = [c for c, p in packages.items() if p["lane"]["key"] != "clear"]
-    mode = {c: briefs[c]["mode"] for c in need}
-    written = [c for c in need if mode[c].startswith("llm")]
-    repaired = [c for c in need if mode[c] == "llm-repaired"]
-    dropped = [c for c in need if mode[c] == "fallback"]
-    other = [c for c in need if mode[c] in ("offline", "unreachable")]
-    with st.popover(f"AI briefs {len(written)} of {len(need)}" if written else "Rule-built briefs"):
-        lines = [f"**{len(need)} cases need a person**, so {len(need)} briefs are drafted by the language model before the shift. "
-                 f"The other {len(packages) - len(need)} are likely false positives: every signal is in range, so a fixed rule "
-                 "writes their one line and no model is called.",
+    case_ids = list(packages)
+    mode = {c: briefs[c]["mode"] for c in case_ids}
+    written = [c for c in case_ids if mode[c].startswith("llm")]
+    repaired = [c for c in case_ids if mode[c] == "llm-repaired"]
+    dropped = [c for c in case_ids if mode[c] == "fallback"]
+    other = [c for c in case_ids if mode[c] in ("offline", "unreachable")]
+    with st.popover(f"AI briefs {len(written)} of {len(case_ids)}" if written else "Rule-built briefs"):
+        lines = [f"**All {len(case_ids)} cases are drafted before the shift.** The model writes only the explanatory text; "
+                 "the statistical engine fixes the lane, evidence and first action.",
                  "The statistics choose the exact evidence shown on each case; the model only writes the prose around it, "
                  "so a brief can never omit a triggered flag or a top indicator."]
         if written:
@@ -1182,9 +1181,9 @@ def main():
         if st.button("Reset recorded decisions", key="reset") and decisions_file().exists():
             decisions_file().unlink()
             st.rerun()
-        todo = [c for c, p in packages.items() if p["lane"]["key"] != "clear"]
+        todo = list(packages)
         if client and st.button(f"Write AI briefs ({len(todo)})", key="prepare",
-                                help="The pre-shift batch: one checked model call per case that needs a person. Replaces briefs_cache.json."):
+                                help="The pre-shift batch: one checked model call per case. Replaces briefs_cache.json."):
             bar = st.progress(0.0, text="Starting ...")
             meta = ai.prepare_briefs(packages, client, progress=lambda i, n, c, mode: bar.progress(i / n, text=f"{c}: {mode}"))
             st.session_state["flash"] = f"Briefs written: {meta['outcomes']}."

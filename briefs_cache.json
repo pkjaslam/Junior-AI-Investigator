@@ -75,7 +75,7 @@
    }
   },
   "C1004": {
-   "headline": "All signals fall within normal ranges for skilled nursing claims",
+   "headline": "All signals fall within the observed benign-profile ranges for skilled nursing claims",
    "summary": "Every signal for this skilled nursing claim sits inside the benign-profile range, with no flags triggered. The care setting does not change the reading because all values align with typical patterns. The first step is to close the alert as no indicator is supported by the data.",
    "key_indicators": [],
    "innocent_reading": "The claim reflects ordinary skilled nursing utilization, with visit frequency, distance, prior claims, billing timing, amount, and rounding all consistent with common, non-concerning patterns.",
@@ -94,7 +94,7 @@
    }
   },
   "C1005": {
-   "headline": "All signals fall within normal ranges for Adult Day Care claims",
+   "headline": "All signals fall within the observed benign-profile ranges for Adult Day Care claims",
    "summary": "The claim shows no elevated signals or triggered flags; every measured value sits inside the benign-profile range. Weekly visit frequency is 4 visits per week, well below the upper reference of 5, and weekend billing share at 0.11 is just under the 0.13 benchmark. The care setting of Adult Day Care aligns with low-frequency, weekday-focused billing, which matches the observed pattern.",
    "key_indicators": [],
    "innocent_reading": "The pattern reflects routine Adult Day Care use: regular weekday attendance, modest billing, and no unusual billing behavior.",
@@ -113,7 +113,7 @@
    }
   },
   "C1006": {
-   "headline": "Weekend billing share at 0.44 exceeds the 0.29 expected for daily home health aide care",
+   "headline": "Weekend billing share at 0.44 exceeds the 0.29 seven-day-care benchmark",
    "summary": "The claim shows 12 visits per week billed from a provider 205 miles away, a pattern that clashes with in-person delivery. Weekend billing at 0.44 is above the 0.29 expected for seven-day care and well above the 0.13 benign upper bound, raising questions about when care actually occurred. The first step is to desk-review the itemised invoices and claim-line history already on file.",
    "key_indicators": [
     {
@@ -279,7 +279,7 @@
    }
   },
   "C1012": {
-   "headline": "All signals fall within normal ranges for assisted living care",
+   "headline": "All signals fall within the observed benign-profile ranges for assisted living care",
    "summary": "Every measured signal sits inside the reference band seen in similar assisted living claims, with no flags triggered. The claim amount is below peer average and visit frequency matches typical patterns. No further review is warranted based on current data.",
    "key_indicators": [],
    "innocent_reading": "The pattern reflects routine assisted living support within expected utilization and billing norms.",
@@ -298,7 +298,7 @@
    }
   },
   "C1013": {
-   "headline": "All signals fall within normal ranges for home health aide claims",
+   "headline": "All signals fall within the observed benign-profile ranges for home health aide claims",
    "summary": "Every measured signal sits inside the reference band seen in benign cases, with no flags triggered. The care setting of home health aide services aligns with low visit frequency, minimal weekend billing, and typical provider distance. No further review is needed based on current data.",
    "key_indicators": [],
    "innocent_reading": "The claim reflects routine home health aide use: low visit volume, no weekend clustering, and charges slightly below peer average, all consistent with ordinary care patterns.",
@@ -317,7 +317,7 @@
    }
   },
   "C1014": {
-   "headline": "All signals fall within normal ranges for home health aide claims",
+   "headline": "All signals fall within the observed benign-profile ranges for home health aide claims",
    "summary": "Every signal for this case sits inside the range seen in benign-profile claims, with no flags triggered. The care setting is home health aide, and none of the observed values\u2014such as visit frequency, distance, or billing patterns\u2014deviate from typical behavior. The recommended first step is to close the alert due to lack of supported indicators.",
    "key_indicators": [],
    "innocent_reading": "The pattern reflects ordinary home health aide use: low visit frequency, modest distance from provider, no prior claims, and billing shares consistent with peers. A flat charge for aide services could explain the round-dollar share without implying anything unusual.",
@@ -336,7 +336,7 @@
    }
   },
   "C1015": {
-   "headline": "Weekend billing share at 0.27 exceeds the 0.13 benchmark for adult day care",
+   "headline": "Weekend billing share at 0.27 exceeds the 0.13 observed benign-profile upper bound",
    "summary": "The claim shows elevated weekend billing at 0.27, which clashes with the typical weekday-only schedule of adult day care centres. Visit frequency is also elevated at 8 visits per week, above the benign profile of 5 visits per week. The first step is to desk-review the itemised invoices and claim-line history to verify billing patterns.",
    "key_indicators": [
     {
@@ -521,7 +521,7 @@
    }
   },
   "C1021": {
-   "headline": "Weekend billing share at 0.51.00 over the benign upper bound of 0.13",
+   "headline": "Weekend billing share at 0.51 exceeds the 0.13 observed benign-profile upper bound",
    "summary": "The claim shows a weekend billing share of 0.51, far above the benign profile upper bound of 0.13, indicating weekends are over-represented. This clashes with the expectation for home health aide care, where daily service would yield about 0.29 weekend share. The first step is to desk-review itemised invoices and claim-line history to verify service dates.",
    "key_indicators": [
     {
@@ -565,7 +565,7 @@
    }
   },
   "C1022": {
-   "headline": "All signals fall within normal ranges for skilled nursing care",
+   "headline": "All signals fall within the observed benign-profile ranges for skilled nursing care",
    "summary": "Every measured signal for this skilled nursing claim sits inside the range seen in benign cases, with no flags triggered. The care setting does not change the reading because all values are already typical for this setting. No further action is needed based on the current data.",
    "key_indicators": [],
    "innocent_reading": "The claim reflects ordinary service use for a skilled nursing resident, with visit frequency, billing patterns, and prior claims all consistent with typical behavior in this setting.",
@@ -861,7 +861,7 @@
    }
   },
   "C1031": {
-   "headline": "Weekend billing share at 0.67 far exceeds the 0.13 benchmark for in-home care.",
+   "headline": "Weekend billing share at 0.67 exceeds the 0.13 observed benign-profile upper bound",
    "summary": "The claim shows a high share of weekend billing (0.67) and frequent visits (14/wk) despite the provider being 84 miles away, which clashes with the feasibility of in-person care delivery. The elevated signals point to billing patterns that do not align with typical in-home care routines. First, review the itemised invoices and claim-line history to verify whether services were actually delivered as billed.",
    "key_indicators": [
     {
@@ -993,7 +993,7 @@
    }
   },
   "C1034": {
-   "headline": "Weekend billing share at 0.53 far exceeds the 0.13 benchmark for Adult Day Care",
+   "headline": "Weekend billing share at 0.53 exceeds the 0.13 observed benign-profile upper bound",
    "summary": "The claim shows 18 visits per week and a weekend billing share of 0.53, both well above benign-profile ranges. For Adult Day Care, which typically operates on weekdays, such high weekend billing clashes with expected patterns. The first step is to desk-review itemised invoices and claim-line history to verify attendance and billing accuracy.",
    "key_indicators": [
     {
@@ -1146,7 +1146,7 @@
    }
   },
   "C1038": {
-   "headline": "All signals fall within normal ranges for in-home care",
+   "headline": "All signals fall within the observed benign-profile ranges for in-home care",
    "summary": "The claim shows no elevated signals or triggered flags. Every measured value\u2014visit frequency, distance, prior claims, weekend billing, charge amount, and round-dollar share\u2014sits inside the typical range seen in benign cases for this care type. The pattern is consistent with ordinary in-home care use.",
    "key_indicators": [],
    "innocent_reading": "The services billed align with what is commonly seen in low-utilization in-home care claims, where visit frequency, provider proximity, and billing patterns remain within expected bounds.",
@@ -1365,7 +1365,7 @@
    }
   },
   "C1047": {
-   "headline": "All signals fall within normal ranges for assisted living care",
+   "headline": "All signals fall within the observed benign-profile ranges for assisted living care",
    "summary": "Every measured signal sits inside the reference band and matches the benign-profile range. No flags are triggered, and the claim amount is below peer average. The pattern shows no deviation from typical assisted living utilization.",
    "key_indicators": [],
    "innocent_reading": "The claim reflects routine assisted living services with visit frequency, distance, prior claims, weekend billing, and billing practices all within expected limits for this care setting.",
@@ -1384,7 +1384,7 @@
    }
   },
   "C1048": {
-   "headline": "All signals fall within normal ranges for assisted living care",
+   "headline": "All signals fall within the observed benign-profile ranges for assisted living care",
    "summary": "Every measured signal for this assisted living claim sits inside the range seen in benign cases, with no flags triggered. The care setting does not change the interpretation because all values are already typical for this environment. The first step is to close the alert as no further review is supported by the data.",
    "key_indicators": [],
    "innocent_reading": "The pattern reflects routine assisted living care with visit frequency, billing timing, and provider distance all consistent with normal use.",
