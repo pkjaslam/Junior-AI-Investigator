@@ -1,0 +1,1469 @@
+{
+ "meta": {
+  "prompt_version": "brief-v6",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "generated_at": "2026-09-20 00:30:46",
+  "outcomes": {
+   "llm": 44,
+   "llm-repaired": 6
+  },
+  "rejection_reasons": [
+   "misstates a care-setting benchmark or queue reference range",
+   "no usable JSON returned",
+   "number 'half' is not in the case facts",
+   "the headline repeats the lane description; name this case's most unusual concrete fact instead"
+  ]
+ },
+ "briefs": {
+  "C1001": {
+   "headline": "Claim amount is 14 percent below peer average",
+   "summary": "The claim amount is below the peer average while all other signals remain inside benign ranges, including visit frequency, distance, prior claims and weekend billing share. The care setting is Adult Day Care, which does not alter the interpretation of these values. The first step is to reconcile the shared claim number before proceeding.",
+   "key_indicators": [],
+   "innocent_reading": "The lower-than-average claim amount may reflect fewer services delivered or a lower-cost provider, both of which are ordinary explanations.",
+   "missing_information": "The source system records for both C1001 and C1031 to determine if they represent one insured\u2019s claim or a keying error.",
+   "stability_note": "A safety rule set the displayed lane. The sensitivity test applies to the underlying profile group. Position 31 to 49 of 50 across alternative weightings.",
+   "mode": "llm-repaired",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "381bf45ff45d",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": [
+     "the headline repeats the lane description; name this case's most unusual concrete fact instead"
+    ]
+   }
+  },
+  "C1002": {
+   "headline": "All signals fall within the benign range for assisted living claims",
+   "summary": "Every signal in this case sits inside the range seen in the benign-profile group, with no flags triggered. The care setting is assisted living, and none of the observed values\u2014such as visit frequency, distance, or billing patterns\u2014stand out compared to typical claims in this setting. The first step is to close the alert, as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects ordinary assisted living care, where visit frequency, provider distance, and billing habits are consistent with normal service use and pose no concern.",
+   "missing_information": "No additional records are needed to settle this case, as all available signals are already within expected ranges.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 28 to 47 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "3a6a92aed804",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1003": {
+   "headline": "All signals fall within the benign range for in-home care",
+   "summary": "Every signal for this in-home care claim sits inside the range seen in the benign-profile group, with no flags triggered. The care setting of in-home care means low visit frequency, short provider distance, and minimal weekend billing are expected patterns. No further action is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects typical, low-utilization in-home care consistent with what is commonly seen in the queue.",
+   "missing_information": "No additional records are needed to settle the case; the current data already shows no supported indicators.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 30 to 45 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "dbee193fa970",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1004": {
+   "headline": "All signals fall within normal ranges for skilled nursing claims",
+   "summary": "Every signal for this skilled nursing claim sits inside the benign-profile range, with no flags triggered. The care setting does not change the reading because all values align with typical patterns. The first step is to close the alert as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary skilled nursing utilization, with visit frequency, distance, prior claims, billing timing, amount, and rounding all consistent with common, non-concerning patterns.",
+   "missing_information": "No additional records are needed to settle this case, as the available data fully supports closing the alert.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 27 to 46 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "041cf77c455a",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1005": {
+   "headline": "All signals fall within normal ranges for Adult Day Care claims",
+   "summary": "The claim shows no elevated signals or triggered flags; every measured value sits inside the benign-profile range. Weekly visit frequency is 4 visits per week, well below the upper reference of 5, and weekend billing share at 0.11 is just under the 0.13 benchmark. The care setting of Adult Day Care aligns with low-frequency, weekday-focused billing, which matches the observed pattern.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects routine Adult Day Care use: regular weekday attendance, modest billing, and no unusual billing behavior.",
+   "missing_information": "Confirmation that the insured meets the benefit trigger for Adult Day Care services would settle whether the services were eligible under the policy.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 34 to 50 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "15e1d2ca7fe1",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 8,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1006": {
+   "headline": "Weekend billing share at 0.44 exceeds the 0.29 expected for daily home health aide care",
+   "summary": "The claim shows 12 visits per week billed from a provider 205 miles away, a pattern that clashes with in-person delivery. Weekend billing at 0.44 is above the 0.29 expected for seven-day care and well above the 0.13 benign upper bound, raising questions about when care actually occurred. The first step is to desk-review the itemised invoices and claim-line history already on file.",
+   "key_indicators": [
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 205 miles, far above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.44, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The member may have moved, making the provider's agency office the billing address, while care is delivered locally by a different caregiver. Flat daily or monthly charges could explain the high round-dollar billing share and frequent invoicing.",
+   "missing_information": "The place of service, the caregiver's base, and the member's address history would settle whether the distance reflects actual travel or an administrative address.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 1 to 8 of 50 across alternative weightings.",
+   "mode": "llm-repaired",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "27410c323549",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 19,
+    "signals_checked": 6,
+    "rejected_draft_issues": [
+     "misstates a care-setting benchmark or queue reference range"
+    ]
+   }
+  },
+  "C1007": {
+   "headline": "All signals sit inside the benign range for assisted living",
+   "summary": "Every measured signal falls within the range seen in benign cases, with no flags triggered. The care setting is assisted living, and the pattern matches typical utilization. No further review is needed based on current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary service use for an assisted living resident, with visit frequency, billing timing, and amount all consistent with peers.",
+   "missing_information": "Confirmation that the insured meets the benefit trigger for assistance with two of six ADLs or cognitive impairment would settle eligibility.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 24 to 33 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "6f82dec28466",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 5,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1008": {
+   "headline": "All signals fall within the benign range for in-home care",
+   "summary": "Every signal for this in-home care claim sits inside the range seen in benign cases, with no flags triggered. The care setting does not change the reading\u2014these patterns are ordinary for this type of service. The first step is to close the alert as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects typical in-home care utilization, with visit frequency, distance, prior claims, weekend billing, and billing patterns all consistent with normal provider behavior in this setting.",
+   "missing_information": "No additional records are needed to settle this case, as the available data fully supports closing the alert.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 34 to 50 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "7b0bcabac6d8",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1009": {
+   "headline": "All signals fall within the benign range for assisted living claims",
+   "summary": "Every signal in this case sits inside the range seen in the benign-profile group, with no flags triggered. The claim amount is below the peer average, and visit frequency, distance, prior claims, weekend billing, and round-dollar billing are all at or below typical levels. No further review is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects routine assisted living care with no unusual billing or utilization; the low claim amount relative to peers may indicate fewer or less intensive services.",
+   "missing_information": "Confirmation that the insured meets the benefit trigger (help with 2 of 6 ADLs or cognitive impairment) would settle whether the services were eligible.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 25 to 42 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "cdcc51d01ede",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 6,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1010": {
+   "headline": "All signals fall within the benign range for home health aide claims",
+   "summary": "Every signal for this home health aide claim sits inside the reference band, with no flags triggered. The pattern matches typical low-utilization cases, such as infrequent visits and modest billing. No further review is needed based on current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine, low-frequency aide visits within normal limits for this care setting, possibly due to stable member needs or part-time support.",
+   "missing_information": "Confirmation of whether the member met the benefit trigger for home health aide services would settle the case.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 25 to 48 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "d31bc92084f7",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1011": {
+   "headline": "Weekend billing share at 0.31 exceeds the benign-profile upper bound of 0.13 for home health aide claims",
+   "summary": "The claim shows elevated weekend billing share at 0.31, well above the benign-profile range of 0.01 to 0.13 for home health aide claims in this queue. Combined with elevated weekly visit frequency (9 visits/wk) and member-provider distance (69 miles), the pattern raises questions about how care is delivered. The first step is to verify who controls the claim and its payments by checking the policy change log.",
+   "key_indicators": [
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 69 miles, above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +45%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 9 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.31, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 3 claims, above the benign-profile maximum of 2 claims."
+    }
+   ],
+   "innocent_reading": "The weekend billing share could reflect care scheduled every day of the week, which naturally results in about 2/7 (0.29) of services falling on weekends. The elevated visit frequency and distance may be explained by the plan of care requiring frequent visits and the provider using an agency office as the billing address.",
+   "missing_information": "The policy change log would settle whether the recent policy change flag reflects a routine update or a change in payee, bank, or power of attorney.",
+   "stability_note": "Keeps its statistical profile group in at least 95% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 10 to 17 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "fe553615e6f5",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 27,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1012": {
+   "headline": "All signals fall within normal ranges for assisted living care",
+   "summary": "Every measured signal sits inside the reference band seen in similar assisted living claims, with no flags triggered. The claim amount is below peer average and visit frequency matches typical patterns. No further review is warranted based on current data.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects routine assisted living support within expected utilization and billing norms.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for activities of daily living or cognitive impairment would settle eligibility.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 32 to 50 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "b539a75172d0",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1013": {
+   "headline": "All signals fall within normal ranges for home health aide claims",
+   "summary": "Every measured signal sits inside the reference band seen in benign cases, with no flags triggered. The care setting of home health aide services aligns with low visit frequency, minimal weekend billing, and typical provider distance. No further review is needed based on current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine home health aide use: low visit volume, no weekend clustering, and charges slightly below peer average, all consistent with ordinary care patterns.",
+   "missing_information": "Confirmation of whether the insured met the benefit trigger for activities of daily living or cognitive impairment would settle the eligibility question.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 25 to 49 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "3fa5e151fc29",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1014": {
+   "headline": "All signals fall within normal ranges for home health aide claims",
+   "summary": "Every signal for this case sits inside the range seen in benign-profile claims, with no flags triggered. The care setting is home health aide, and none of the observed values\u2014such as visit frequency, distance, or billing patterns\u2014deviate from typical behavior. The recommended first step is to close the alert due to lack of supported indicators.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects ordinary home health aide use: low visit frequency, modest distance from provider, no prior claims, and billing shares consistent with peers. A flat charge for aide services could explain the round-dollar share without implying anything unusual.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger (help with 2 of 6 ADLs or cognitive impairment) would settle if the service was eligible.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 31 to 48 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "a0378a40afb4",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 6,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1015": {
+   "headline": "Weekend billing share at 0.27 exceeds the 0.13 benchmark for adult day care",
+   "summary": "The claim shows elevated weekend billing at 0.27, which clashes with the typical weekday-only schedule of adult day care centres. Visit frequency is also elevated at 8 visits per week, above the benign profile of 5 visits per week. The first step is to desk-review the itemised invoices and claim-line history to verify billing patterns.",
+   "key_indicators": [
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 8 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.27, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 5 claims, above the benign-profile maximum of 2 claims."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 42 miles, above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.40, above the benign-profile maximum of 0.20."
+    }
+   ],
+   "innocent_reading": "The centre may offer weekend transport or activities, and the member may attend regularly, leading to higher visit counts and weekend charges that reflect actual service delivery.",
+   "missing_information": "Attendance sign-in sheets and the centre's opening days for the billed period would settle whether the billed visits and weekend charges match actual service.",
+   "stability_note": "Keeps its statistical profile group in at least 98% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 11 to 18 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "d1fae9c70cfb",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 22,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1016": {
+   "headline": "Duplicate service billed and round-dollar share point to invoicing issues",
+   "summary": "The claim shows a triggered duplicate service flag and a round-dollar billing share of 0.46, well above the benign profile of 0.20. Weekend billing share at 0.22 exceeds the benign upper bound of 0.13, though daily care would yield ~0.29. First, review invoices to check for reversal-and-rebill patterns and verify amounts against time-based rates.",
+   "key_indicators": [
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 5 claims, above the benign-profile maximum of 2 claims."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.46, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 8 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +25%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.22, above the benign-profile maximum of 0.13."
+    }
+   ],
+   "innocent_reading": "The duplicate line may be a corrected resubmission or reversal and rebill, and round amounts could reflect flat daily or monthly charges. Weekend billing may align with scheduled care if the provider is open on weekends.",
+   "missing_information": "Itemised invoices with hours or days, provider rate sheet, and claim-line history with adjustment codes would settle the invoicing concerns.",
+   "stability_note": "Keeps its statistical profile group in at least 98% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 11 to 18 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "ccf073624523",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 22,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1017": {
+   "headline": "All signals sit inside the benign range with no flags triggered",
+   "summary": "Every signal for this in-home care claim falls within the reference band and below the benign-profile upper limit. No elevated or severe signals are present, and no hard flags have fired. The pattern matches typical low-utilization home care.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine, low-frequency in-home assistance consistent with benign utilization patterns seen across the queue.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for activities of daily living or cognitive impairment would settle the eligibility question.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 33 to 48 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "e19118102152",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1018": {
+   "headline": "All signals fall within the benign range for Adult Day Care claims",
+   "summary": "Every signal in this case sits inside the reference band, with no flags triggered. The care setting is Adult Day Care, and the pattern matches typical utilization seen in the benign-profile group. No further review is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary use of Adult Day Care services, with visit frequency, distance, prior claims, weekend billing, charge level, and round-dollar billing all consistent with what is commonly seen in this queue.",
+   "missing_information": "No additional records are needed to settle this case, as the available data already show no supported indicators.",
+   "stability_note": "Keeps its statistical profile group in at least 99% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 22 to 34 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "4a2e61928c8b",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 5,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1019": {
+   "headline": "Shared contact with provider and weekend billing share raise questions in Adult Day Care",
+   "summary": "The claim shows a shared contact between member and provider, which could be a facility address or relative helping with paperwork. Weekend billing share at 0.23 is elevated for a weekday day-centre service, where little weekend billing is expected. First, check the insurer's records to determine whose contact information matched.",
+   "key_indicators": [
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.23, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 57 miles, above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.38, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +13%, above the benign-profile maximum of +10%."
+    }
+   ],
+   "innocent_reading": "The shared contact may reflect a facility address or a relative assisting with administrative tasks, which is common. Weekend billing could align with a schedule offering some weekend sessions, though less typical for adult day care.",
+   "missing_information": "The matched contact field (address, phone, e-mail or bank) and whose it is would settle the shared contact signal.",
+   "stability_note": "Keeps its statistical profile group in at least 97% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 12 to 20 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "af1095bc1ce2",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 15,
+    "signals_checked": 5,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1020": {
+   "headline": "All signals fall within the benign range for assisted living care",
+   "summary": "Every signal in this case sits inside the range seen in the benign-profile group, with no flags triggered. The care setting is assisted living, and none of the observed values\u2014such as 5 visits per week or 4 miles distance\u2014deviate from typical patterns for that setting. The first step is to close the alert, as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine assisted living services, with visit frequency, distance, and billing patterns all consistent with what is commonly seen in this care setting and population.",
+   "missing_information": "No additional records are needed to settle this case, as the available data already show no supported indicators.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 25 to 47 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "aa5115d1220c",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 6,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1021": {
+   "headline": "Weekend billing share at 0.51.00 over the benign upper bound of 0.13",
+   "summary": "The claim shows a weekend billing share of 0.51, far above the benign profile upper bound of 0.13, indicating weekends are over-represented. This clashes with the expectation for home health aide care, where daily service would yield about 0.29 weekend share. The first step is to desk-review itemised invoices and claim-line history to verify service dates.",
+   "key_indicators": [
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 246 miles, far above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.51, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "Care delivered seven days a week could naturally produce a weekend share near 0.29, and a flat daily or monthly charge would explain the round-dollar billing pattern.",
+   "missing_information": "Itemised invoices with service dates and the provider's rate sheet would settle whether the weekend share and round-dollar pattern reflect actual service delivery.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 1 to 7 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "c2b6f2e69eec",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 19,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1022": {
+   "headline": "All signals fall within normal ranges for skilled nursing care",
+   "summary": "Every measured signal for this skilled nursing claim sits inside the range seen in benign cases, with no flags triggered. The care setting does not change the reading because all values are already typical for this setting. No further action is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary service use for a skilled nursing resident, with visit frequency, billing patterns, and prior claims all consistent with typical behavior in this setting.",
+   "missing_information": "No additional records are needed to settle the case, as the available data already show no supported indicators.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 36 to 50 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "b2f8c8ecfe7c",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1023": {
+   "headline": "Weekly visit frequency of 9 visits/wk is well above the benign range of up to 5 visits/wk for assisted living",
+   "summary": "The claim shows elevated weekly visit frequency, weekend billing share, and amount vs peer average, all of which clash with the assisted living care setting where billing is typically per day. Shared contact and recent policy change flags raise questions about payment control. The first step is to request the facility's itemised statement and residency record to verify billed units against actual residency.",
+   "key_indicators": [
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.40, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 9 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 65 miles, above the benign-profile maximum of 25 miles."
+    }
+   ],
+   "innocent_reading": "The member may be receiving separately billed therapy or private-duty services in addition to facility care, invoiced more frequently than monthly, and using a relative's address for correspondence while residing at the facility.",
+   "missing_information": "The facility's itemised statement and residency record would settle whether billed units match days of residence and separately listed services.",
+   "stability_note": "Borderline profile: the statistical group changes in 49% of the runs of its least favourable stress test. Treat this case as near a group boundary. Position 9 to 14 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "660aebc3bf86",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 15,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1024": {
+   "headline": "Weekly visit frequency of 18 visits/wk far exceeds the benign range of 2.00 to 5.00 for skilled nursing facility claims",
+   "summary": "The claim shows 18 visits per week billed, which is well above the benign-profile range of 2.00 to 5.00 visits per week for skilled nursing facility claims in this queue. In a residential setting, care is typically billed per day, making a weekly visit count an unusual unit that requires clarification from the itemised statement. The first step is to desk-review the itemised invoices and claim-line history to determine what the billed unit represents.",
+   "key_indicators": [
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 18 visits/wk, far above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.53, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The billed units may include separately charged services such as therapy sessions that are not part of the daily room and board rate, which would explain the high weekly visit count without implying improper billing.",
+   "missing_information": "An itemised facility statement and residency record for the billed period would settle whether the visit count reflects separately billable services or an erroneous unit of billing.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 2 to 6 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "68e26dcb38c1",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 18,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1025": {
+   "headline": "Recent policy change flag triggered with elevated weekend billing share",
+   "summary": "The recent policy change flag is triggered, indicating a possible update to payee, bank or power-of-attorney shortly before claim activity. The weekend billing share is elevated at 0.16, above the benign-profile facility range of 0.00 to 0.13, though daily care would yield about 0.29. First, verify who controls the claim and its payments by reviewing the policy change log.",
+   "key_indicators": [
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 60 miles, above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 5 claims, above the benign-profile maximum of 2 claims."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.43, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +31%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.16, above the benign-profile maximum of 0.13."
+    }
+   ],
+   "innocent_reading": "The policy change may reflect a routine update such as a new mailing address after a move, and the weekend billing could align with scheduled therapy or limited weekend staffing at the facility.",
+   "missing_information": "The policy change log with requester and channel would settle whether the change was routine or involved payee, bank or power-of-attorney.",
+   "stability_note": "Keeps its statistical profile group in at least 97% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 11 to 19 of 50 across alternative weightings.",
+   "mode": "llm-repaired",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "0ff8d5e0fd1f",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 21,
+    "signals_checked": 6,
+    "rejected_draft_issues": [
+     "no usable JSON returned"
+    ]
+   }
+  },
+  "C1026": {
+   "headline": "Weekend billing share at 0.30 is unusual for a weekday adult day care",
+   "summary": "The claim shows elevated weekend billing share (0.30) and weekly visit frequency (6 visits/wk), both clashing with the typical weekday schedule of adult day care centres. The claim amount is also well above peer average (+19%) with a notable share of round-dollar billing (0.33). First, review the itemised invoices to verify if amounts align with hours, days, or flat charges.",
+   "key_indicators": [
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.30, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 6 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 54 miles, above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +19%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.33, above the benign-profile maximum of 0.20."
+    }
+   ],
+   "innocent_reading": "The centre may operate on weekends or offer transport services billed per trip, and the member\u2019s address on file could be outdated, explaining the distance and weekend billing. Flat daily or monthly charges would naturally produce round-dollar invoices.",
+   "missing_information": "Itemised invoices with service dates, hours or days of care, and the provider\u2019s rate sheet would settle whether the billing reflects actual care delivered.",
+   "stability_note": "Keeps its statistical profile group in at least 96% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 17 to 20 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "122690f9ef1d",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 20,
+    "signals_checked": 5,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1027": {
+   "headline": "All signals sit inside the benign range with no flags triggered",
+   "summary": "Every signal for this skilled nursing claim falls within the reference band and matches or stays below the benign-profile upper bound. No elevated signals or hard flags are present, so the pattern looks ordinary for this care setting. The first step is to close the alert as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects typical utilization for a skilled nursing setting, with visit frequency, distance, prior claims, weekend billing, and billing amounts all aligning with what is commonly seen in benign cases.",
+   "missing_information": "No additional records are needed to settle the case; the available data already show no supported indicators.",
+   "stability_note": "Borderline profile: the statistical group changes in 12% of the runs of its least favourable stress test. Treat this case as near a group boundary. Position 21 to 28 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "5b8fbb8c6537",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1028": {
+   "headline": "All signals fall within the benign range for assisted living claims",
+   "summary": "Every signal in this case sits inside the reference band and matches the benign-profile range, with no flags triggered. The care setting is assisted living, and the pattern shows no deviation from typical utilization. The first step is to close the alert as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine assisted living utilization, with visit frequency, distance, prior claims, weekend billing, and amount all within expected ranges for this care setting.",
+   "missing_information": "No additional records are needed to settle this case, as the available data already shows no supported indicator.",
+   "stability_note": "Keeps its statistical profile group in at least 99% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 24 to 39 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "d6180304c524",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 5,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1029": {
+   "headline": "All signals fall within the benign range for this assisted living claim",
+   "summary": "Every signal for case C1029 sits inside the reference band, with no flags triggered. The claim amount of $1,117 is slightly below peer average (-1%), and visit frequency (5 visits/wk) is at the upper edge of the benign range. No pattern deviates from expected assisted living norms.",
+   "key_indicators": [],
+   "innocent_reading": "The services billed align with typical assisted living usage, where weekly visits and low weekend billing are common and not unusual.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for assistance with activities of daily living or cognitive impairment would settle the claim's validity.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 26 to 46 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "3a48a4843ace",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 7,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1030": {
+   "headline": "Weekend billing share at 0.56 is well above the 0.13 upper bound seen in this queue for in-home care",
+   "summary": "The claim shows 14 visits per week billed from a provider 92 miles away, with weekend billing at 0.56\u2014well above the 0.13 upper bound observed in this queue. These patterns clash with the in-home care setting, where such frequency and distance are hard to sustain and weekend overuse suggests non-routine billing. First, review itemised invoices to verify visit timing and amounts.",
+   "key_indicators": [
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.56, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 92 miles, far above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The member may need round-the-clock help, invoiced as a flat daily charge, which naturally produces round-dollar bills and frequent weekend billing if care is continuous.",
+   "missing_information": "Itemised invoices with service dates and hours would settle whether visits occurred as billed and whether amounts match time-based rates.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 1 to 6 of 50 across alternative weightings.",
+   "mode": "llm-repaired",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "d959c7218ff5",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 18,
+    "signals_checked": 6,
+    "rejected_draft_issues": [
+     "misstates a care-setting benchmark or queue reference range"
+    ]
+   }
+  },
+  "C1031": {
+   "headline": "Weekend billing share at 0.67 far exceeds the 0.13 benchmark for in-home care.",
+   "summary": "The claim shows a high share of weekend billing (0.67) and frequent visits (14/wk) despite the provider being 84 miles away, which clashes with the feasibility of in-person care delivery. The elevated signals point to billing patterns that do not align with typical in-home care routines. First, review the itemised invoices and claim-line history to verify whether services were actually delivered as billed.",
+   "key_indicators": [
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.67, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 84 miles, far above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The member may have moved, making the provider's address appear distant, while care is delivered daily by a local aide, explaining the high visit frequency and weekend billing. Flat-rate billing could also account for the round-dollar share and weekend concentration if services are scheduled uniformly.",
+   "missing_information": "The member's address history and the caregiver's base location would clarify whether the 84-mile distance reflects actual travel for each visit.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 3 to 8 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "a6c9f5b3e308",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 18,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1032": {
+   "headline": "Weekend billing share at 0.26 exceeds the benign range of 0.01 to 0.13 for home health aide claims",
+   "summary": "The claim shows elevated weekend billing share, round-dollar billing, and duplicate service flags, all moderately high. In home health aide care, a weekend share of 0.26 is well above the benign pattern of 0.01 to 0.13, suggesting billing may not align with typical visit patterns. First, review the itemised invoices and claim-line history to check for reversal-and-rebill pairs and verify amounts against rates and hours.",
+   "key_indicators": [
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.48, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +43%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.26, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 36 miles, above the benign-profile maximum of 25 miles."
+    }
+   ],
+   "innocent_reading": "The weekend share could reflect care scheduled every day of the week, which naturally yields about 0.29 of billing on weekends. Round-dollar charges may stem from flat daily or monthly fees, and the duplicate line might be a corrected resubmission.",
+   "missing_information": "Itemised invoices with service dates, hours, and rates would settle whether the billing pattern reflects actual care delivery.",
+   "stability_note": "Keeps its statistical profile group in at least 93% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 9 to 17 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "c0ce42e6e7bd",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 22,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1033": {
+   "headline": "Weekend billing share at 0.25 exceeds the benign upper bound of 0.13 for skilled nursing claims",
+   "summary": "The claim shows elevated weekend billing share (0.25), round-dollar billing share (0.41), and duplicate service billing, all above typical levels for skilled nursing care. The member-provider distance of 52 miles suggests the address on file may not reflect the facility location, and shared contact with provider raises questions about billing control. First, review itemised invoices and claim-line history to verify whether services were billed correctly and whether duplicates represent resubmissions or overpayments.",
+   "key_indicators": [
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +35%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 52 miles, above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.41, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 7 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    }
+   ],
+   "innocent_reading": "The weekend billing share of 0.25 is close to the 0.29 expected if care is provided every day of the week, and round-dollar billing may reflect flat daily or monthly facility charges. The duplicate service flag could stem from a corrected resubmission or reversal and rebill, which is common in claims processing.",
+   "missing_information": "Itemised invoices with service dates, hours or days of care, and provider rate sheets would clarify whether billed amounts match delivered services and whether duplicates are legitimate adjustments.",
+   "stability_note": "Keeps its statistical profile group in at least 92% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 9 to 14 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "6db315860865",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 22,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1034": {
+   "headline": "Weekend billing share at 0.53 far exceeds the 0.13 benchmark for Adult Day Care",
+   "summary": "The claim shows 18 visits per week and a weekend billing share of 0.53, both well above benign-profile ranges. For Adult Day Care, which typically operates on weekdays, such high weekend billing clashes with expected patterns. The first step is to desk-review itemised invoices and claim-line history to verify attendance and billing accuracy.",
+   "key_indicators": [
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 18 visits/wk, far above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.53, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The centre may offer weekend transport or extended hours, and invoices could reflect flat daily charges that appear round. Frequent claims may stem from routine monthly billing of an ongoing LTC need.",
+   "missing_information": "Attendance (sign-in) sheets and the centre's opening days for the billed period would settle whether the billed visits match actual service delivery.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 1 to 7 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "d3f5126a86b4",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 16,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1035": {
+   "headline": "All signals fall within benign ranges with no flags triggered",
+   "summary": "Every signal for this skilled nursing claim sits inside the reference band and below the benign-profile upper limit, with zero elevated or severe signals and no flags triggered. The pattern matches the typical range seen in the benign group, so no indicator stands out for further review. The care setting does not alter the reading, as all values remain consistent with expected norms for skilled nursing.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary utilization where visit frequency, distance, prior claims, weekend billing, amount relative to peers, and round-dollar billing all align with common patterns in the benign population.",
+   "missing_information": "No additional records are needed to settle this case, as the current data already shows no supported indicators.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 24 to 38 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "edcd1510db2b",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1036": {
+   "headline": "Weekend billing share at 0.50 far exceeds the 0.13 benign upper bound for home health aide claims",
+   "summary": "The claim shows 13 visits per week billed while the member lives 247 miles from the provider, a combination that strains in-person delivery. Weekend billing accounts for 0.50 of charges, well above the expected share for daily care. The first step is to desk-review the itemised invoices and claim-line history already on file.",
+   "key_indicators": [
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 247 miles, far above the benign-profile maximum of 25 miles."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.50, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The provider may be an agency using a central office address, and the member may have moved, explaining the distance. Flat daily or monthly charges could produce the high round-dollar share and weekend billing if care is scheduled every day.",
+   "missing_information": "The plan of care and the provider's visit record for the billed period would settle whether the visit frequency matches authorised services.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 3 to 8 of 50 across alternative weightings.",
+   "mode": "llm-repaired",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "3da31e65b8df",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 17,
+    "signals_checked": 6,
+    "rejected_draft_issues": [
+     "number 'half' is not in the case facts"
+    ]
+   }
+  },
+  "C1037": {
+   "headline": "Weekend billing share at 0.72 clashes with Adult Day Care weekday pattern",
+   "summary": "The claim shows 16 visits per week and a weekend billing share of 0.72, far above the benign profile of 0.13, which is unusual for a weekday-focused Adult Day Care setting. The high visit frequency and round-dollar billing share of 0.72 further suggest billing patterns inconsistent with typical centre operations. First, review itemised invoices and claim-line history to assess whether services were duplicated or billed as flat charges.",
+   "key_indicators": [
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.72, far above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 16 visits/wk, far above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "shared_contact_with_provider",
+     "finding": "Shared contact with provider is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    }
+   ],
+   "innocent_reading": "The centre may operate seven days a week with transport or extended hours, and flat daily or monthly charges could explain the round-dollar billing and high visit counts if attendance sheets confirm regular participation.",
+   "missing_information": "Attendance (sign-in) sheets and the centre's opening days for the billed period would settle whether the billed visits match actual service delivery.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 1 to 6 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "b28bcbeb5143",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 18,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1038": {
+   "headline": "All signals fall within normal ranges for in-home care",
+   "summary": "The claim shows no elevated signals or triggered flags. Every measured value\u2014visit frequency, distance, prior claims, weekend billing, charge amount, and round-dollar share\u2014sits inside the typical range seen in benign cases for this care type. The pattern is consistent with ordinary in-home care use.",
+   "key_indicators": [],
+   "innocent_reading": "The services billed align with what is commonly seen in low-utilization in-home care claims, where visit frequency, provider proximity, and billing patterns remain within expected bounds.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for in-home care would settle the case.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 24 to 41 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "697c1442e098",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1039": {
+   "headline": "All signals sit inside the benign range with no flags triggered",
+   "summary": "Every signal for this assisted living claim falls within the reference band and matches or stays below the benign-profile upper bound. No hard flags are present, and the lane marks it as a likely false positive. The first step is to close the alert as no indicator is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects typical use: visit frequency, distance, prior claims, weekend billing, and amount relative to peers all align with what is commonly seen in benign cases for this care setting.",
+   "missing_information": "No additional records are needed to settle the case; the available data already show no supported indicator.",
+   "stability_note": "Keeps its statistical profile group in at least 98% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 21 to 29 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "cbefb0cf9df1",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 5,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1040": {
+   "headline": "Weekly visit frequency of 8 visits/wk clashes with assisted living billing norms",
+   "summary": "The claim shows 8 visits per week, well above the benign-profile range of 2 to 5 visits/wk for assisted living, where care is typically billed per day, not per visit. Weekend billing share at 0.22 is above this queue's benign-profile upper bound of 0.13 but below the 0.29 seven-day-care benchmark, so the ratio needs clarification. First, review itemised invoices to clarify what the visit count represents.",
+   "key_indicators": [
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 8 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.47, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 4 claims, above the benign-profile maximum of 2 claims."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +30%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.22, above the benign-profile maximum of 0.13."
+    }
+   ],
+   "innocent_reading": "The billed visits may include separately charged services like therapy or wellness checks, not just routine facility care. A flat daily or monthly rate could still apply, with additional services itemised on top.",
+   "missing_information": "Itemised facility statement and residency record for the billed period would clarify whether the visit count reflects distinct services or is misaligned with daily billing.",
+   "stability_note": "Keeps its statistical profile group in at least 98% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 16 to 20 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "e79f44d49add",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 21,
+    "signals_checked": 5,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1041": {
+   "headline": "All signals fall within the benign range for Adult Day Care",
+   "summary": "Every signal in this case sits inside the range seen in the benign-profile group, with no flags triggered. The care setting is Adult Day Care, and the pattern matches typical utilization for that setting. No further review is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary Adult Day Care use, with visit frequency, distance, prior claims, weekend billing, and amount all aligning with what is commonly seen in this queue.",
+   "missing_information": "No additional records are needed to settle the case; the available data already shows no supported indicator.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 29 to 47 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "d7e4e03223be",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1042": {
+   "headline": "Weekend billing share at 0.28 exceeds benign-profile range",
+   "summary": "The weekend billing share of 0.28 is well above the benign-profile upper bound of 0.13 for home-care claims in this queue, though it is just below the 0.29 expected if care were delivered every day of the week. This suggests the billing pattern may reflect frequent service, consistent with the elevated weekly visit frequency of 7 visits/wk. The first step is to review itemised invoices to verify amounts align with hours or days of care and the provider\u2019s rate.",
+   "key_indicators": [
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +44%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 5 claims, above the benign-profile maximum of 2 claims."
+    },
+    {
+     "signal": "weekend_billing_ratio",
+     "finding": "Weekend billing share is 0.28, above the benign-profile maximum of 0.13."
+    },
+    {
+     "signal": "round_dollar_billing_ratio",
+     "finding": "Round-dollar billing share is 0.44, above the benign-profile maximum of 0.20."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 7 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    },
+    {
+     "signal": "member_provider_distance_miles",
+     "finding": "Member-provider distance is 39 miles, above the benign-profile maximum of 25 miles."
+    }
+   ],
+   "innocent_reading": "The member may be receiving daily home health aide services, which would explain both the high visit frequency and a weekend share near 0.29, with flat daily or monthly charges producing round-dollar billing.",
+   "missing_information": "Itemised invoices with service dates, hours or days of care, and the provider\u2019s rate sheet would settle whether the billing aligns with delivered care.",
+   "stability_note": "Keeps its statistical profile group in at least 98% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 13 to 18 of 50 across alternative weightings.",
+   "mode": "llm-repaired",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "61eb3c41ab53",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 24,
+    "signals_checked": 6,
+    "rejected_draft_issues": [
+     "misstates a care-setting benchmark or queue reference range"
+    ]
+   }
+  },
+  "C1043": {
+   "headline": "All signals sit inside the benign range for Adult Day Care",
+   "summary": "Every signal falls within the reference band and no flags are triggered. The claim amount is just over the peer average and visit frequency is well below the upper bound of the benign range. No further action is needed based on current data.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects typical use of Adult Day Care services with no unusual billing or utilization behavior.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for Adult Day Care eligibility.",
+   "stability_note": "Keeps its statistical profile group in at least 99% of the runs of each stress test (random weights, resampled queue, one signal removed). Position 22 to 34 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "a810a34cf7f8",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 5,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1044": {
+   "headline": "All signals fall within the benign range for home health aide claims",
+   "summary": "Every signal in this case sits inside the range seen in the benign-profile group, with no flags triggered. The care setting is home health aide, and the pattern matches ordinary utilization. No further review is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects typical home health aide use: low visit frequency, short provider distance, average billing amount, and minimal weekend or round-dollar billing\u2014all consistent with benign behavior in this queue.",
+   "missing_information": "No additional records are needed to settle the case; the available data already show no supported indicator.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 32 to 49 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "1955bec60117",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1045": {
+   "headline": "All signals fall within the benign range for skilled nursing care",
+   "summary": "Every signal in this skilled nursing claim sits inside the reference band, with no flags triggered. The pattern matches what is typical for this care setting, showing no unusual billing or utilization. No further review is needed based on the current data.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects ordinary skilled nursing utilization, with visit frequency, distance, prior claims, weekend billing, and amount all within expected ranges for similar cases.",
+   "missing_information": "No additional records are needed to settle this case, as the available data already shows no supported indicators.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 26 to 43 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "db4a6e29fa41",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1046": {
+   "headline": "All signals sit inside the benign range with no flags triggered",
+   "summary": "Every signal for this in-home care claim falls within the typical range seen in benign cases, including visit frequency, distance, prior claims, weekend billing, charge level, and round-dollar share. No hard flags such as duplicate billing or shared contacts are present. The pattern matches ordinary low-utilization home care.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine, infrequent in-home visits from a provider located a moderate distance away, with no unusual billing patterns or prior utilization.",
+   "missing_information": "A record of the actual services delivered and the member\u2019s functional status would confirm whether the visit frequency aligns with care needs.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 27 to 50 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "ebf27001e463",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1047": {
+   "headline": "All signals fall within normal ranges for assisted living care",
+   "summary": "Every measured signal sits inside the reference band and matches the benign-profile range. No flags are triggered, and the claim amount is below peer average. The pattern shows no deviation from typical assisted living utilization.",
+   "key_indicators": [],
+   "innocent_reading": "The claim reflects routine assisted living services with visit frequency, distance, prior claims, weekend billing, and billing practices all within expected limits for this care setting.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for assistance with two of six activities of daily living or cognitive impairment would settle the eligibility question.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 31 to 47 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "eb926df373f4",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 5,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1048": {
+   "headline": "All signals fall within normal ranges for assisted living care",
+   "summary": "Every measured signal for this assisted living claim sits inside the range seen in benign cases, with no flags triggered. The care setting does not change the interpretation because all values are already typical for this environment. The first step is to close the alert as no further review is supported by the data.",
+   "key_indicators": [],
+   "innocent_reading": "The pattern reflects routine assisted living care with visit frequency, billing timing, and provider distance all consistent with normal use.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for activities of daily living or cognitive impairment would settle eligibility, though it does not affect the signal-based assessment.",
+   "stability_note": "Keeps its statistical profile group in every run of each stress test (random weights, resampled queue, one signal removed). Position 29 to 49 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "96b02c9b71f8",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1049": {
+   "headline": "All signals fall within the benign range for assisted living claims",
+   "summary": "Every signal in this case sits inside the reference band, with no flags triggered. The claim amount is modest and aligns with peer averages. No pattern deviates from what is typical for assisted living care.",
+   "key_indicators": [],
+   "innocent_reading": "The services billed appear consistent with routine assisted living support, such as regular aide visits within expected frequency and distance norms.",
+   "missing_information": "Confirmation of whether the insured meets the benefit trigger for ADL help or cognitive impairment would settle the eligibility question.",
+   "stability_note": "Borderline profile: the statistical group changes in 15% of the runs of its least favourable stress test. Treat this case as near a group boundary. Position 21 to 23 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "5bca29e26be9",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 4,
+    "signals_checked": 0,
+    "rejected_draft_issues": []
+   }
+  },
+  "C1050": {
+   "headline": "Weekend billing share at 0.18 exceeds the benign-profile upper bound of 0.13 for home health aide claims",
+   "summary": "The claim shows elevated weekend billing share, weekly visit frequency at 7 visits/wk, prior claims at 5 in 12 months, amount 33% above peer average, round-dollar billing share at 0.39, duplicate service billed, recent policy change triggered, and service overlap with another provider. For home health aide care, weekend billing share of 0.18 is above the benign-profile range of 0.01 to 0.13, which warrants checking how the ratio is defined. The first step is to desk-review the itemised invoices and claim-line history already on file.",
+   "key_indicators": [
+    {
+     "signal": "service_overlap_other_provider",
+     "finding": "Service overlap with another provider is triggered; 20% of this queue has it."
+    },
+    {
+     "signal": "recent_policy_change_flag",
+     "finding": "Recent policy change is triggered; 24% of this queue has it."
+    },
+    {
+     "signal": "duplicate_service_billed",
+     "finding": "Duplicate service billed is triggered; 26% of this queue has it."
+    },
+    {
+     "signal": "prior_claims_last_12mo",
+     "finding": "Prior claims, last 12 months is 5 claims, above the benign-profile maximum of 2 claims."
+    },
+    {
+     "signal": "amount_vs_peer_avg_pct",
+     "finding": "Amount vs peer average is +33%, above the benign-profile maximum of +10%."
+    },
+    {
+     "signal": "weekly_visit_frequency",
+     "finding": "Weekly visit frequency is 7 visits/wk, above the benign-profile maximum of 5 visits/wk."
+    }
+   ],
+   "innocent_reading": "The weekend billing share may reflect scheduled care on Saturdays or Sundays, and the elevated visit frequency could match a plan of care calling for morning and evening help. Round-dollar amounts may stem from flat daily or monthly charges, and the duplicate line might be a corrected resubmission or reversal and rebill.",
+   "missing_information": "Itemised invoices with service dates, hours or days, and the provider's rate sheet would settle whether the billing pattern is ordinary.",
+   "stability_note": "Borderline profile: the statistical group changes in 18% of the runs of its least favourable stress test. Treat this case as near a group boundary. Position 9 to 18 of 50 across alternative weightings.",
+   "mode": "llm",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "brief-v6",
+   "facts_sha": "c4867db44d9d",
+   "validation": {
+    "passed": true,
+    "issues": [],
+    "numbers_checked": 24,
+    "signals_checked": 6,
+    "rejected_draft_issues": []
+   }
+  }
+ }
+}

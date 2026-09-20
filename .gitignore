@@ -1,0 +1,26 @@
+# secrets and local state
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+decisions*.csv
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.ipynb_checkpoints/
+
+# editor and operating-system files
+.DS_Store
+Thumbs.db
+~$*
+.codex_tmp/

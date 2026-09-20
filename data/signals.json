@@ -1,0 +1,148 @@
+{
+ "weekly_visit_frequency": {
+  "label": "Weekly visit frequency",
+  "fmt": "{:.0f} visits/wk",
+  "concern": "More visits are billed each week than the benign-profile cases show.",
+  "benign": "The plan of care may call for this frequency, for example help every morning and evening.",
+  "step": "Compare billed visits with the plan of care.",
+  "records": "Plan of care and the provider's visit record for the billed period.",
+  "if_clean": "Billed visits match the plan of care.",
+  "if_not": "Billed visits exceed the plan of care or cannot be evidenced.",
+  "by_setting": {
+   "residential": {
+    "benign": "The count may include services billed separately from the daily rate, such as therapy sessions.",
+    "step": "Compare billed days with the residency record and list any separately billed services.",
+    "records": "Itemised facility statement and residency record for the billed period.",
+    "if_clean": "Billed days match the residency record and the extra units are separately listed services.",
+    "if_not": "More days are billed than the resident was there, or the units cannot be evidenced."
+   },
+   "day_centre": {
+    "benign": "Some centres open at weekends, and the count may include transport billed per trip.",
+    "step": "Compare billed attendances with the centre's sign-in sheets and opening days.",
+    "records": "Attendance (sign-in) sheets and the centre's opening days for the billed period.",
+    "if_clean": "Billed attendances match the sign-in sheets.",
+    "if_not": "Attendances are billed for days the member was not signed in or the centre was closed."
+   }
+  }
+ },
+ "member_provider_distance_miles": {
+  "label": "Member-provider distance",
+  "fmt": "{:.0f} miles",
+  "concern": "The provider is a long way from the member for in-person care.",
+  "benign": "The address may be an agency office rather than the caregiver's base, or the member may have moved.",
+  "step": "Confirm where care was delivered and where the caregiver travelled from.",
+  "records": "Place of service, the caregiver's base, and the member's address history.",
+  "if_clean": "Care was delivered close to the member (an office address, or a move).",
+  "if_not": "Nobody can show who travelled to deliver the care.",
+  "by_setting": {
+   "residential": {
+    "benign": "The address on file may be the insured's former home or a relative's, not the facility.",
+    "step": "Confirm the admission date and which address is on file for the insured.",
+    "records": "Admission record and the insured's address history.",
+    "if_clean": "The address on file is a former home or a relative's; the insured lives at the facility.",
+    "if_not": "Nobody can show that the insured lives at the facility."
+   },
+   "day_centre": {
+    "benign": "Centres often run transport or a relative drives, and the address on file may be out of date.",
+    "step": "Confirm how the member gets to the centre and which address is on file.",
+    "records": "Transport log or sign-in sheets, and the member's address history.",
+    "if_clean": "Transport or a current address explains the distance.",
+    "if_not": "Nobody can show how the member reached the centre on billed days."
+   }
+  }
+ },
+ "prior_claims_last_12mo": {
+  "label": "Prior claims, last 12 months",
+  "fmt": "{:.0f} claims",
+  "concern": "Claim activity is more frequent than the benign-profile cases show.",
+  "benign": "An ongoing LTC claim is usually invoiced monthly, so up to 12 a year can be routine.",
+  "step": "Review the 12-month claim history for a step change in frequency.",
+  "records": "Claim history with service periods and payment status.",
+  "if_clean": "Claims follow a regular invoicing rhythm.",
+  "if_not": "Claim frequency jumped without a change in care needs."
+ },
+ "weekend_billing_ratio": {
+  "label": "Weekend billing share",
+  "fmt": "{:.2f}",
+  "concern": "A large share of billing falls on weekends.",
+  "benign": "Care delivered every day of the week puts about 0.29 (2 days in 7) on weekends.",
+  "step": "Check that weekend service dates match scheduled care or opening days.",
+  "records": "Itemised invoices with service dates.",
+  "if_clean": "Weekend dates match scheduled care or opening days.",
+  "if_not": "Weekend billing does not match when care is delivered."
+ },
+ "amount_vs_peer_avg_pct": {
+  "label": "Amount vs peer average",
+  "fmt": "{:+.0f}%",
+  "concern": "The claim is well above the peer average.",
+  "benign": "Higher care needs, more hours of care or a costlier area can explain it.",
+  "step": "Confirm the peer group and the hours or days of care behind the amount.",
+  "records": "Peer-group definition; itemised statement with hours or days and the rate charged.",
+  "if_clean": "More hours of care or a higher-cost area explain the amount.",
+  "if_not": "The amount cannot be tied to hours or days of care."
+ },
+ "round_dollar_billing_ratio": {
+  "label": "Round-dollar billing share",
+  "fmt": "{:.2f}",
+  "concern": "Many invoices are round amounts, which hours x hourly rate rarely produces.",
+  "benign": "Flat daily or monthly charges are round by nature.",
+  "step": "Check invoice amounts against the provider's stated rate x hours or days.",
+  "records": "Itemised invoices with hours or days, and the provider's rate sheet.",
+  "if_clean": "Amounts follow a flat daily or monthly charge.",
+  "if_not": "Amounts have no rate x time basis."
+ },
+ "duplicate_service_billed": {
+  "label": "Duplicate service billed",
+  "fmt": "{:.0f}",
+  "concern": "The same service appears to have been billed more than once.",
+  "benign": "One line may be a corrected resubmission, or a reversal and rebill.",
+  "step": "Look for a reversal-and-rebill pair behind the duplicate line.",
+  "records": "Claim-line history with adjustment and reversal codes.",
+  "if_clean": "The second line is a corrected resubmission or a reversal and rebill.",
+  "if_not": "The same service was paid more than once."
+ },
+ "shared_contact_with_provider": {
+  "label": "Shared contact with provider",
+  "fmt": "{:.0f}",
+  "concern": "Member and provider share an address, phone, e-mail or bank detail.",
+  "benign": "It may be a facility address, or a relative who helps with paperwork. If a relative is the paid caregiver, whether that is payable is a coverage question for the examiner.",
+  "step": "Find out which contact field matched (address, phone, e-mail or bank) and whose it is.",
+  "records": "The matched contact field and its history; provider ownership.",
+  "if_clean": "The match is a facility address or a relative who helps with paperwork.",
+  "if_not": "A bank or phone detail belongs to the provider."
+ },
+ "recent_policy_change_flag": {
+  "label": "Recent policy change",
+  "fmt": "{:.0f}",
+  "concern": "The policy record changed shortly before this claim activity. Payee, bank or power-of-attorney changes matter most, and the insured may be the one being exploited.",
+  "benign": "Routine updates, such as a new mailing address after a move, are common.",
+  "step": "Pull the policy change log: what changed, who asked, when and through which channel.",
+  "records": "Policy change log with requester and channel.",
+  "if_clean": "A routine update requested by the insured or a known representative.",
+  "if_not": "A payee, bank or power-of-attorney change redirected payments."
+ },
+ "service_overlap_other_provider": {
+  "label": "Service overlap with another provider",
+  "fmt": "{:.0f}",
+  "concern": "Two providers billed for overlapping time.",
+  "benign": "Some services legitimately run together, or providers were changing over.",
+  "step": "Line up both providers' visit times for the overlapping dates.",
+  "records": "Both providers' visit records with times.",
+  "if_clean": "The two providers' visits fall at different times or are complementary.",
+  "if_not": "Both providers billed the same hours.",
+  "by_setting": {
+   "residential": {
+    "benign": "A resident can receive extra services from an outside provider, such as private-duty care or therapy, on days the facility also bills.",
+    "step": "Line up the facility's billed days with the other provider's dates and what each delivered.",
+    "records": "Both providers' statements with dates and services.",
+    "if_clean": "The second provider delivered a service the facility's charge does not include.",
+    "if_not": "Both providers billed the same care for the same days."
+   },
+   "day_centre": {
+    "benign": "Home care before or after centre hours on the same day is common.",
+    "step": "Line up centre attendance hours with the other provider's visit times.",
+    "if_clean": "The home care fell outside the centre's hours."
+   }
+  }
+ }
+}

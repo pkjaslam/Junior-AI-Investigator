@@ -1,0 +1,13 @@
+[theme]
+base = "light"
+primaryColor = "#1e3a5f"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f4f5f7"
+textColor = "#111827"
+baseFontSize = 15
+showWidgetBorder = true
+borderColor = "#d5d9e0"
+dataframeHeaderBackgroundColor = "#f7f8fa"
+
+[browser]
+gatherUsageStats = false

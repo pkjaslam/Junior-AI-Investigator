@@ -1,0 +1,159 @@
+{
+  "description": "Frozen outputs from the earlier prompt that asked the model to select indicators. The current prompt does not let the model select evidence.",
+  "source_prompt_version": "brief-v5",
+  "n_cases": 19,
+  "cases": {
+    "C1006": {
+      "model_selected_signals": [
+        "member_provider_distance_miles",
+        "weekly_visit_frequency",
+        "weekend_billing_ratio"
+      ]
+    },
+    "C1011": {
+      "model_selected_signals": [
+        "recent_policy_change_flag",
+        "member_provider_distance_miles",
+        "weekly_visit_frequency"
+      ]
+    },
+    "C1015": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "weekend_billing_ratio",
+        "duplicate_service_billed",
+        "round_dollar_billing_ratio",
+        "amount_vs_peer_avg_pct"
+      ]
+    },
+    "C1016": {
+      "model_selected_signals": [
+        "duplicate_service_billed",
+        "round_dollar_billing_ratio",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "weekly_visit_frequency"
+      ]
+    },
+    "C1019": {
+      "model_selected_signals": [
+        "shared_contact_with_provider",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "round_dollar_billing_ratio",
+        "member_provider_distance_miles"
+      ]
+    },
+    "C1021": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "member_provider_distance_miles",
+        "amount_vs_peer_avg_pct",
+        "weekend_billing_ratio",
+        "round_dollar_billing_ratio"
+      ]
+    },
+    "C1023": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "shared_contact_with_provider",
+        "recent_policy_change_flag"
+      ]
+    },
+    "C1024": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "weekend_billing_ratio",
+        "round_dollar_billing_ratio"
+      ]
+    },
+    "C1025": {
+      "model_selected_signals": [
+        "recent_policy_change_flag",
+        "member_provider_distance_miles"
+      ]
+    },
+    "C1026": {
+      "model_selected_signals": [
+        "weekend_billing_ratio",
+        "weekly_visit_frequency",
+        "amount_vs_peer_avg_pct",
+        "round_dollar_billing_ratio",
+        "member_provider_distance_miles"
+      ]
+    },
+    "C1030": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "member_provider_distance_miles"
+      ]
+    },
+    "C1031": {
+      "model_selected_signals": [
+        "member_provider_distance_miles",
+        "weekly_visit_frequency",
+        "weekend_billing_ratio"
+      ]
+    },
+    "C1033": {
+      "model_selected_signals": [
+        "round_dollar_billing_ratio",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "shared_contact_with_provider"
+      ]
+    },
+    "C1034": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "round_dollar_billing_ratio",
+        "prior_claims_last_12mo"
+      ]
+    },
+    "C1036": {
+      "model_selected_signals": [
+        "member_provider_distance_miles",
+        "weekly_visit_frequency",
+        "weekend_billing_ratio"
+      ]
+    },
+    "C1037": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "member_provider_distance_miles",
+        "prior_claims_last_12mo"
+      ]
+    },
+    "C1040": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "amount_vs_peer_avg_pct",
+        "round_dollar_billing_ratio",
+        "weekend_billing_ratio",
+        "prior_claims_last_12mo"
+      ]
+    },
+    "C1042": {
+      "model_selected_signals": [
+        "round_dollar_billing_ratio",
+        "amount_vs_peer_avg_pct",
+        "weekly_visit_frequency"
+      ]
+    },
+    "C1050": {
+      "model_selected_signals": [
+        "weekly_visit_frequency",
+        "prior_claims_last_12mo",
+        "round_dollar_billing_ratio",
+        "weekend_billing_ratio",
+        "amount_vs_peer_avg_pct"
+      ]
+    }
+  }
+}
